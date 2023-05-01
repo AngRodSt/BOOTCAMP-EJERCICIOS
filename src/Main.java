@@ -31,6 +31,19 @@ public class Main {
         micoche.numpuertas();
         System.out.println(micoche.puertas);
 
+
+
+        //BUCLE FOR
+        int valores[]= {10,20,30,40,50};
+        for (int i=0; i < valores.length; i++){
+            System.out.println(valores[i]);
+        }
+
+        int temperatura=15;
+        for (; temperatura <= 20; temperatura++){
+            System.out.println(temperatura);
+        }
+
     }
     //FUNCION DE OPERACIONES
     public static int suma(int a, int b, int c)
