@@ -1,6 +1,6 @@
 public class Main {
     //CONDICIONALES//
-    public  static void main(String[] args) {
+    public static void main(String[] args) {
         String festividad ="Carnaval";
 
         if (festividad == "Navidad"){
@@ -113,7 +113,87 @@ public class Main {
                 System.out.println("La estación propuesta no es la indicada");
         }
 
+        //ORIENTADA A OBJETOS
+
+        temperatura Temperatura = new temperatura();
+        Temperatura.subeTemperatura(10);
+        Temperatura.subeTemperatura();
+        System.out.println(Temperatura.temperaturaActual);
+
+        //PRUEBA ENCAPSULAMIENTO
+        avion Avion = new avion();
+        Avion.setVolar(3);
+        Avion.getVolar();
+
+
+
     }
+    //ENCAPSULAMIENTO. PUBLICO Y PRIVADO
+    static class avion{
+        private int alas;
+        private void setVolar(int alas){
+            this.alas=alas;
+        }
+        private int getVolar(){
+            if (alas==2){
+                System.out.println("Esto  es un avión");
+            } else  {
+                System.out.println("Esto NO es un avión");
+            }
+            return alas;
+        }
+
+    }
+    static class Bus{
+        int gomas;
+        private void correr(int gomas){
+            this.gomas=gomas;
+            if (gomas==4){
+                System.out.println("Esto  es un Bus");
+            } else  {
+                System.out.println("Esto NO es un Bus");
+            }
+
+        }
+
+    }
+
+    //CREACION DE CLASE
+
+    static class temperatura {
+        int temperaturaMinima;
+        int temperaturaMaxima;
+        int temperaturaActual;
+
+        public void temperatura(){
+        }
+        public void subeTemperatura(int temperaturaActual){
+            this.temperaturaActual=temperaturaActual;
+            temperaturaMaxima=51;
+            if (temperaturaActual==temperaturaMaxima){
+                System.out.println("La temperatura ha llegado a su límite, ES MUY CALIENTE! BEBE MUCHA AGUA");
+            }
+            temperaturaMinima=-5;
+            if  (temperaturaActual==temperaturaMinima){
+                System.out.println("La temperatura ha llegado a su límite, ES MUY FRÍO! ABRÍGATE");
+            }
+        }
+        public void subeTemperatura(){
+            temperaturaActual++;
+            temperaturaMaxima=51;
+            if (temperaturaActual==temperaturaMaxima){
+                System.out.println("La temperatura ha llegado a su límite, ES MUY CALIENTE! BEBE MUCHA AGUA");
+            }
+        }
+        public void bajaTemperatura(){
+            temperaturaActual--;
+            temperaturaMinima=-5;
+            if (temperaturaActual==temperaturaMinima){
+                System.out.println("La temperatura ha llegado a su límite, ES MUY FRÍO! ABRÍGATE");
+            }
+        }
+    }
+
     //FUNCION DE OPERACIONES
     public static int suma(int a, int b, int c)
     {int resultado;
